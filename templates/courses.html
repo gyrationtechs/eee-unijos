@@ -1,0 +1,543 @@
+{% extends "base.html" %}
+{% block content %}
+  {% if current_user.level == 100 %}  
+    <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th>S/N</th>
+                <th>Course Code</th>
+                <th>Title</th>
+                <th>Semester</th>
+                <th>Credit Unit</th>
+                <th>Prerequisite</th>
+                <th>Status</th>
+                <th>Select</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th>S/N</th>
+                <th>Course Code</th>
+                <th>Title</th>
+                <th>Semester</th>
+                <th>Credit Unit</th>
+                <th>Prerequisite</th>
+                <th>Status</th> 
+                <th>Select</th>
+              </tr>
+            </tfoot>
+            <tbody>
+              <tr>
+                <td>1.</td>
+                <td>MTH 101</td>
+                <td>Elementary Mathematics I (Algebra and Trigonomerty)</td>
+                <td>1</td>
+                <td>3</td>
+                <td> - </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>2.</td>
+                <td>PHY 101 (E)</td>
+                <td>Mechanics and Properties of Matter</td>
+                <td>1</td>
+                <td>3</td>
+                <td> - </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>3.</td>
+                <td>PHY 103 (E)</td>
+                <td>Electromagnetism and Modern Physics</td>
+                <td>1</td>
+                <td>3</td>
+                <td> - </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>4.</td>
+                <td>PHY 107</td>
+                <td>General Physics Practical I</td>
+                <td>1</td>
+                <td>2NE</td>
+                <td> - </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>5.</td>
+                <td>CHM 101</td>
+                <td>Physical Chemistry I</td>
+                <td>1</td>
+                <td>3</td>
+                <td> - </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>6.</td>
+                <td>CHM 103</td>
+                <td>Practical Physical Chemistry I</td>
+                <td>1</td>
+                <td>1NE</td>
+                <td> - </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>7.</td>
+                <td>CS 101</td>
+                <td>Introduction to Computer Science</td>
+                <td>1</td>
+                <td>2</td>
+                <td> - </td>
+                <td>Cognate</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>8.</td>
+                <td>GST 103</td>
+                <td>Nigeria People and Culture</td>
+                <td>1</td>
+                <td>2</td>
+                <td> - </td>
+                <td>General</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>9.</td>
+                <td>GST 104</td>
+                <td>History and Phylosophy of Science</td>
+                <td>1</td>
+                <td>2</td>
+                <td> - </td>
+                <td>General</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>9.</td>
+                <td>MTH 102</td>
+                <td>Elementary Mathematics II (Vectors, Geometry and Dynamics)</td>
+                <td>2</td>
+                <td>3</td>
+                <td> - </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>10.</td>
+                <td>MTH 103</td>
+                <td>Elementary Mathematics III (Calculus)</td>
+                <td>2</td>
+                <td>3</td>
+                <td> - </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>11.</td>
+                <td>PHY 102 (E)</td>
+                <td>Thermal Physics, Sound and Optics</td>
+                <td>2</td>
+                <td>3</td>
+                <td> - </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>12.</td>
+                <td>PHY 108</td>
+                <td>General Physics Practical</td>
+                <td>2</td>
+                <td>2NE</td>
+                <td> - </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>13.</td>
+                <td>CHM 102</td>
+                <td>Inorganic Chemistry I</td>
+                <td>2</td>
+                <td>3</td>
+                <td> - </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>14.</td>
+                <td>CHM 106</td>
+                <td>Practical Inorganic Chemistry I</td>
+                <td>2</td>
+                <td>1NE</td>
+                <td> - </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>15.</td>
+                <td>GST 101</td>
+                <td>Use of English</td>
+                <td>2</td>
+                <td>4</td>
+                <td> - </td>
+                <td>General</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>16.</td>
+                <td>GST 102</td>
+                <td>Philosophy and Logic</td>
+                <td>2</td>
+                <td>2</td>
+                <td> - </td>
+                <td>General</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>17.</td>
+                <td>CS 102</td>
+                <td>Introduction to Computer Application</td>
+                <td>2</td>
+                <td>3</td>
+                <td> - </td>
+                <td>Cognate</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {% elif current_user.level == 300 %}  
+    <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th>S/N</th>
+                <th>Course Code</th>
+                <th>Title</th>
+                <th>Semester</th>
+                <th>Credit Unit</th>
+                <th>Prerequisite</th>
+                <th>Status</th>
+                <th>Select</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th>S/N</th>
+                <th>Course Code</th>
+                <th>Title</th>
+                <th>Semester</th>
+                <th>Credit Unit</th>
+                <th>Prerequisite</th>
+                <th>Status</th> 
+                <th>Select</th>
+              </tr>
+            </tfoot>
+            <tbody>
+              <tr>
+                <td>1.</td>
+                <td>EEE 301</td>
+                <td>Circuit Theory and Systems I</td>
+                <td>1</td>
+                <td>3</td>
+                <td> EEE 201 </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>2.</td>
+                <td>EEE 303</td>
+                <td>Electromagnetic Fields and Waves</td>
+                <td>1</td>
+                <td>2</td>
+                <td> EEE 201 </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>3.</td>
+                <td>EEE 305 </td>
+                <td>Physical Electronics </td>
+                <td>1</td>
+                <td>3</td>
+                <td> EEE 203 </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>4.</td>
+                <td>EEE 307</td>
+                <td>Digital Electronics I</td>
+                <td>1</td>
+                <td>3</td>
+                <td> EEE 203 </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>5.</td>
+                <td>EEE 309</td>
+                <td>Electrical Machines I</td>
+                <td>1</td>
+                <td>3</td>
+                <td> EEE 202 </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>6.</td>
+                <td>EEE 311</td>
+                <td>Electrical/Electronics Laboratory</td>
+                <td>1</td>
+                <td>1NE</td>
+                <td> - </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>7.</td>
+                <td>EEE 313</td>
+                <td>Introduction to Programming for Engineers</td>
+                <td>1</td>
+                <td>2</td>
+                <td> CS 102 </td>
+                <td>Cognate</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>8.</td>
+                <td>EEE 315</td>
+                <td>Electrical Workshop 2 Project Design</td>
+                <td>1</td>
+                <td>1NE</td>
+                <td> - </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>9.</td>
+                <td>MTH 341</td>
+                <td>Numerical Analysis</td>
+                <td>1</td>
+                <td>3</td>
+                <td> MTH 202 </td>
+                <td>Cognate</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>10.</td>
+                <td>EEE 302</td>
+                <td>Circuit Theory and Systems II</td>
+                <td>2</td>
+                <td>2</td>
+                <td> EEE 201 </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>11.</td>
+                <td>EEE 304</td>
+                <td>Power Engineering I</td>
+                <td>2</td>
+                <td>2</td>
+                <td> EEE 202 </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>12.</td>
+                <td>EEE 306</td>
+                <td>Power Electronics I</td>
+                <td>2</td>
+                <td>3</td>
+                <td> EEE 203 </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>13.</td>
+                <td>EEE 308</td>
+                <td>Measurements and Instrumentation</td>
+                <td>2</td>
+                <td>3</td>
+                <td> EEE 202 </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>14.</td>
+                <td>EEE 310 </td>
+                <td>Electronics Engineering I</td>
+                <td>2</td>
+                <td>2</td>
+                <td> EEE 202 </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>15.</td>
+                <td>EEE 312</td>
+                <td>Control Engineering I</td>
+                <td>2</td>
+                <td>3</td>
+                <td> - </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>16.</td>
+                <td>EEE 316</td>
+                <td>Computer Programming in C++</td>
+                <td>2</td>
+                <td>2</td>
+                <td> - </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>17.</td>
+                <td>EEE 318</td>
+                <td>Electrical/Electronics Laboratory</td>
+                <td>1NE</td>
+                <td>2</td>
+                <td> - </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>18.</td>
+                <td>MTH 342</td>
+                <td>Complex Analysis</td>
+                <td>3</td>
+                <td>2</td>
+                <td> MTH 201 </td>
+                <td>Cognate</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>19.</td>
+                <td>STA 372</td>
+                <td>Engineering Statistics</td>
+                <td>3</td>
+                <td>2</td>
+                <td> - </td>
+                <td>Cognate</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+            {% elif current_user.level == 500 %}  
+    <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th>S/N</th>
+                <th>Course Code</th>
+                <th>Title</th>
+                <th>Semester</th>
+                <th>Credit Unit</th>
+                <th>Prerequisite</th>
+                <th>Status</th>
+                <th>Select</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th>S/N</th>
+                <th>Course Code</th>
+                <th>Title</th>
+                <th>Semester</th>
+                <th>Credit Unit</th>
+                <th>Prerequisite</th>
+                <th>Status</th> 
+                <th>Select</th>
+              </tr>
+            </tfoot>
+            <tbody>
+              <tr>
+                <td>1.</td>
+                <td>EEE 501</td>
+                <td>Advanced Circuit Theory</td>
+                <td>1</td>
+                <td>3</td>
+                <td> EEE 302 </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>2.</td>
+                <td>EEE 503</td>
+                <td>Advanced EM Fields and Waves</td>
+                <td>1</td>
+                <td>2</td>
+                <td> EEE 303 </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>3.</td>
+                <td>EEE 505</td>
+                <td>Energy Systems and Management</td>
+                <td>1</td>
+                <td>2</td>
+                <td> - </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>4.</td>
+                <td>EEE 507</td>
+                <td>Power Systems Protection</td>
+                <td>1</td>
+                <td>3</td>
+                <td> EEE 401 </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>5.</td>
+                <td>EEE 509</td>
+                <td>Engineering Management and Enterprise</td>
+                <td>1</td>
+                <td>2</td>
+                <td> - </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>6.</td>
+                <td>EEE 511</td>
+                <td>Reliability and Maintainability</td>
+                <td>1</td>
+                <td>2</td>
+                <td> - </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+              <tr>
+                <td>7.</td>
+                <td>EEE 513</td>
+                <td>Advanced Electrical Machines</td>
+                <td>1</td>
+                <td>2</td>
+                <td> EEE 409 </td>
+                <td>Core</td>
+                <td><input type="checkbox" name="select" id=""></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {% endif %}
+{% endblock content %}

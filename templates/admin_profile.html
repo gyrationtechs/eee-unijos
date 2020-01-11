@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+     <h4 style=" background-color: #092a50; color: #ffffff; padding: 10px;">Admin Profile</h4>
+     <div class="content-section mt-3 mb-3">
+         <div class="media">
+             <img src=" {{ profile }} " height="100" width="100" alt="" class="rounded-circle  account-img mb-3">
+             <div class="media-body ml-4">
+                 <h2 class="account-heading"> {{ current_user.first_name }} {{ current_user.last_name }} </h2>
+                 <p class="text-secondary"> {{ current_user.username }} </p>
+             </div>
+         </div>
+         <h4>Pages</h4>
+         <ul class="list-group">
+            <li class="list-group-item list-group-item-light"><a href="/admin">Admin Page</a></li>
+            <li class="list-group-item list-group-item-light"><a href="/add_admin">Add Admin</a></li>
+            <li class="list-group-item list-group-item-light"><a href="/admin/student">All Students</a></li>
+            <li class="list-group-item list-group-item-light"><a href="/admin/post">All Posts</a></li>
+         </ul>
+     </div>
+
+{% endblock %}
