@@ -92,10 +92,11 @@ class MyModelView(ModelView):
         return abort(403)
 
     def is_accessible(self):
-        if current_user != current_user.is_authenticated:
-            return abort(403)
         if current_user.is_admin == True:
             return current_user.is_authenticated
+
+        elif current_user != current_user.is_authenticated:
+            return abort(403)
         else:
             return abort(403)
 
@@ -109,10 +110,10 @@ class MyAdminIndexView(AdminIndexView):
 
 
     def is_accessible(self):
-        if current_user != current_user.is_authenticated:
-            return abort(403)
-        elif current_user.is_admin == True:
+        if current_user.is_admin == True:
             return current_user.is_authenticated
+        elif current_user != current_user.is_authenticated:
+            return abort(403)
         else:
             return abort(403)
 
