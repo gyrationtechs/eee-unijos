@@ -3,17 +3,17 @@
 {% for post in posts %}
 <!-- Blog Post -->
     <div class="card mb-4">
-        <img class="card-img-top" src=" # " alt="Card image cap">
+        <!-- <img class="card-img-top" src=" # " alt="Card image cap"> -->
         <div class="card-body">
-            <h3 class="card-title"> {{ post.title }} </h3>
-            <p class="card-text text-muted"> {{ post.content }} </p>
-         <small><a href="#" style=" background-color: #092a50; color: #ffffff; padding: 10px;" class="btn small">Read More...</a></small>
+            <h3 class="card-title"><a style="text-decoration: none; color: #092a50;" href="{{ url_for('forum_content', post_id=post.id) }}"> {{ post.title }} </a></h3>
+            <p class="card-text small text-muted"> {{ post.content }} </p>
+         <small><a href=" {{ url_for('forum_content', post_id=post.id) }} " style="align-self: right; background-color: #092a50; color: #ffffff; padding: 10px;" class="btn btn-sm">Read More...</a></small>
         </div>
         <div class="card-footer text-muted">
             <small>
             <img class="rounded-circle" height="40px" width="40px" src=" {{ url_for('static', filename='images/' + post.author.profile) }} " alt="Post Author Image">
             Posted on: {{ post.date_posted.strftime('%Y-%m-%d') }}
-             By <a href=" {{url_for('dashboard')}} ">{{ post.author.username }} </a>
+             By <a href=" {{url_for('dashboard')}}">{{ post.author.username }} </a>
             </small>
         </div>
     </div>

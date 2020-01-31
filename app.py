@@ -334,6 +334,7 @@ def add_admin():
 @app.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
+    #user_id = Student.query.filter_by(username=current_user.username)
     x = 1
     while x <= 10:
         x += 1
@@ -420,6 +421,47 @@ def contact():
 def forum():
     posts = Post.query.all()
     return render_template('forum.html', title='EEE Forum', posts=posts)
+
+
+@app.route('/forum/<int:post_id>')
+def forum_content(post_id):
+    post = Post.query.get_or_404(post_id)
+    user_id = Post.query.get(post.author.username)
+    return render_template('forum_content.html', title='EEE Forum', user_id=user_id, post=post)
+
+
+@app.route('/forum/<int:post_id>/update', methods=['GET', 'POST'])
+@login_required
+def forum_update(post_id):
+    post = Post.query.get_or_404(post_id)
+    if post.author != current_user:
+        abort(403)
+    form = PostForm()
+    if request.method == 'GET':
+        form.title.data = post.title
+        form.content.data = post.content
+
+    elif form.validate_on_submit():
+        post.title = form.title.data
+        post.content = form.content.data
+        db.session.commit()
+        flash('Your post has been Updated', 'success')
+        return redirect(url_for('forum'))
+
+    return render_template('forum_update.html', title='EEE Forum', form=form, post=post)
+
+
+@app.route('/forum/<int:post_id>/delete', methods=['GET', 'POST'])
+@login_required
+def delete_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    if post.author != current_user:
+        abort(403)
+    db.session.delete(post)
+    db.session.commit()
+    flash('Your post has been Deleted', 'success')
+    return redirect(url_for('forum'))
+
 
 
 @app.route('/forget')

@@ -4,6 +4,9 @@
     font-family: tahoma, sans-serif;
 }
 
+ul.footer-s {
+    list-style: none;
+}
 
 .link-style {
     text-decoration: none; 
